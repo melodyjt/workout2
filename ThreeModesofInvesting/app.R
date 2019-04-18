@@ -141,9 +141,9 @@ server <- function(input, output) {
                                                   y = balances)) + 
        geom_line(aes(color = modalities)) + 
        geom_point(aes(color = modalities)) +
-       geom_area(aes(fill = modalities, alpha = 1)) + 
+       geom_area(aes(fill = modalities, col = modalities, alpha = 1)) + 
        scale_alpha(guide = "none") +
-       facet_grid(~ modalities) + 
+       facet_wrap(~ modalities) + 
        labs(y = "Growth ($)", x = "Year", title = "Three Modes of investing")
      
      data <- switch(input$facet,
