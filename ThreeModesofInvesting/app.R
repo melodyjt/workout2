@@ -134,6 +134,9 @@ server <- function(input, output) {
                                    modalities = modals,
                                    balances = balances)
      
+     modalitiesfacet$modalities <- factor(modalitiesfacet$modalities, c("no_contrib", 
+                                                                        "fixed_contrib",
+                                                                        "growing_contrib"))
      timelinefacet <- ggplot(modalitiesfacet, aes(x = y, 
                                                   y = balances)) + 
        geom_line(aes(color = modalities)) + 
